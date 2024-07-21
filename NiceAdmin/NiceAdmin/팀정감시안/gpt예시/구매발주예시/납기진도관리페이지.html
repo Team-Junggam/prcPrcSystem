@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>납기진도 관리</title>
+</head>
+<body>
+    <h1>납기진도 관리</h1>
+    <form action="/save_delivery_schedule" method="post">
+        <label for="project_name">프로젝트 명:</label>
+        <input type="text" id="project_name" name="project_name" value="예시 프로젝트" required><br><br>
+        
+        <label for="due_date">납기일:</label>
+        <input type="date" id="due_date" name="due_date" value="2024-08-01" required><br><br>
+        
+        <label for="current_date">현재 날짜:</label>
+        <input type="date" id="current_date" name="current_date" value="2024-07-01" required><br><br>
+        
+        <label for="progress">현재 진척도 (%):</label>
+        <input type="number" id="progress" name="progress" value="60" required><br><br>
+        
+        <label for="status">상태:</label>
+        <input type="text" id="status" name="status" value="진행 중" disabled><br><br>
+        
+        <button type="submit">저장</button>
+    </form>
+    <script>
+        // 상태 자동 계산 스크립트
+        const dueDate = document.getElementById('due_date');
+        const currentDate = document.getElementById('current_date');
+        const progressInput = document.getElementById('progress');
+        const status = document.getElementById('status');
+        
+        function calculateStatus() {
+            const due = new Date(dueDate.value);
+            const current = new Date(currentDate.value);
+            const daysLeft = (due - current) / (1000 * 60 * 60 * 24);
+            const progress = parseInt(progressInput.value);
+            let statusText = '진행 중';
+            
+            if (daysLeft < 0) {
+                statusText = '납기일 지남';
+            } else if (progress >= 100) {
+                statusText = '완료';
+            } else {
+                const estimatedProgress = (100 / daysLeft) * (30 - daysLeft); // 단순 예시를 위한 계산
+                statusText = progress >= estimatedProgress ? '진행 중' : '지연';
+            }
+            
+            status.value = statusText;
+        }
+        
+        dueDate.addEventListener('input', calculateStatus);
+        currentDate.addEventListener('input', calculateStatus);
+        progressInput.addEventListener('input', calculateStatus);
+    </script>
+</body>
+</html>

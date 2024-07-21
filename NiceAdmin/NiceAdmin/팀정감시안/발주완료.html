@@ -545,94 +545,154 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">거래내용</h5>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">발주일자</label>
-                      <div class="col-sm-10">
-                        <input type="date" class="form-control" value="2024-07-18" disabled>
-                      </div>
+                  <h5 class="card-title">거래내용</h5>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">발주일자</label>
+                    <div class="col-sm-10">
+                      <input type="date" class="form-control" value="2024-07-18" disabled>
                     </div>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">납기일자</label>
-                      <div class="col-sm-10">
-                        <input type="date" class="form-control" value="2024-08-05" disabled>
-                      </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">납기일자</label>
+                    <div class="col-sm-10">
+                      <input type="date" class="form-control" value="2024-08-05" disabled>
                     </div>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">납품장소</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" value="경기도 수원시 어쩌구 저쩌구 1층 창고" disabled>
-                      </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">납품장소</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" value="경기도 수원시 어쩌구 저쩌구 1층 창고" disabled>
                     </div>
-                    <HR>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">품목명</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" value="펜대" disabled>
-                      </div>
+                  </div>
+                  
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">품목명</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" value="펜대" disabled>
                     </div>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">규격</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" value="황동/8cm" disabled>
-                      </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">규격</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" value="황동/8cm" disabled>
                     </div>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">수량</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" value="50" disabled>
-                      </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">수량</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" value="50" disabled>
                     </div>
-                    <HR>
-                    <div class="row mb-3">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">비고</label>
-                      <div class="col-sm-10">
-                        <textarea class="form-control" style="height: 100px" disabled>문의사항 발생시 언제든 연락부탁드립니다. 납기 전 담당자에게 연락 부타드립니다.</textarea>
-                      </div>
+                  </div>
+                  
+                  <div class="row mb-3">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">비고</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" style="height: 100px" disabled>문의사항 발생시 언제든 연락부탁드립니다. 납기 전 담당자에게 연락 부타드립니다.</textarea>
                     </div>
-                    
-                    <button type="button" class="btn btn-primary">발주서보기</button>
-                    <button type="button" class="btn btn-primary">리스트</button>
-
-                </div>
-            </div>
-        </div>
-        
-      </div>
-    </section>
-
-  </main><!-- End #main -->
-
-  <!--메인끝-->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+                  </div>
+                  <div id="content"></div>
+                  
+                  <button type="button" class="btn btn-primary" id="addHtmlBtn">검수계획추가</button>
+                  <button type="button" class="btn btn-primary">수정</button>
+                  <button type="button" class="btn btn-primary">발주서보기</button>
+                  <button type="button" class="btn btn-primary">리스트</button>
+                  
+              </div>
+          </div>
+          
+          
+      
     </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </footer><!-- End Footer -->
+  </section>
+  <!--나중을 위해 메인 안쪽에다 스크립트 추가-->
+  <script>
+    var testCount=1;
+    document.getElementById('addHtmlBtn').addEventListener('click', function() {
+      if(testCount<=3){
+        var contentDiv = document.getElementById('content');
+        var newHtml = `
+              <hr>
+                        <h5 class="card-title">검수계획`+testCount+`</h5>
+                        
+                        <div class="row mb-3">
+                          <label for="inputText" class="col-sm-2 col-form-label">날짜</label>
+                          <div class="col-sm-10">
+                            <input type="date" class="form-control" value="2024-07-31" >
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="inputTime" class="col-sm-2 col-form-label">시간</label>
+                          <div class="col-sm-10">
+                            <input type="time" class="form-control" value="10:00">
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="row mb-3">
+                          <label for="inputText" class="col-sm-2 col-form-label">담당자</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" value="이준섭 사원" >
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label for="inputText" class="col-sm-2 col-form-label">연락처</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" value="010-555-55555">
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="row mb-3">
+                          <label for="inputPassword" class="col-sm-2 col-form-label">비고</label>
+                          <div class="col-sm-10">
+                            <textarea class="form-control" style="height: 100px">위와같이 검수 예정입니다. 일정 확인 후 연락 부탁드립니다.</textarea>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-primary">검수계획저장</button>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+                        
+    
+              
+        `;
+        contentDiv.innerHTML += newHtml;
+        testCount+=1;}
+    });
+</script>
 
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="../assets/vendor/echarts/echarts.min.js"></script>
-  <script src="../assets/vendor/quill/quill.js"></script>
-  <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
+
+</main><!-- End #main -->
+
+<!--메인끝-->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    <!-- All the links in the footer should remain intact. -->
+    <!-- You can delete the links only if you purchased the pro version. -->
+    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/chart.js/chart.umd.js"></script>
+<script src="../assets/vendor/echarts/echarts.min.js"></script>
+<script src="../assets/vendor/quill/quill.js"></script>
+<script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="../assets/js/main.js"></script>
 
 </body>
 

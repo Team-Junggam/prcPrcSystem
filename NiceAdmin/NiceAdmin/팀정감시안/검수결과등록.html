@@ -447,12 +447,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>자재등록</h1>
+      <h1>발주처리</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="main.html">메인</a></li>
           <li class="breadcrumb-item">경로1</li>
-          <li class="breadcrumb-item active">자재등록</li>
+          <li class="breadcrumb-item active">발주처리</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -460,73 +460,125 @@
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
-
-          <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">
-                  자재등록
-                  
-                </h5>
-  
-                <!-- General Form Elements -->
-                <form>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">자재코드</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" value="PROD-1234-5678-9012-3456" disabled>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">발주내역</h5>
+                        <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">발주코드</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="itemCodeInput">
+                                    <button class="input-group-text" id="confirmSelectionBtn">검색</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-    
-                    <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">자재명</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">규격</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">재질</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control">
-                      </div>
-                   </div>
-                    
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">도면</label>
-                    <div class="col-sm-10">
-                      <input class="form-control" type="file" id="formFile">
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">참고문서</label>
-                    <div class="col-sm-10">
-                      <input class="form-control" type="file" id="formFile">
-                    </div>
-                  </div>
-                  
-                  
-  
-                  <div class="row mb-3">
-                    <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">저장</button>
-                    </div>
-                  </div>
-  
-                </form><!-- End General Form Elements -->
-  
-              </div>
-
+                </div>
+            </div>
         </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">검수계획 1</h5>                       
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">날짜</label>
+                            <div class="col-sm-10">
+                              <input type="date" class="form-control" value="2024-07-31" disabled>
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <label for="inputTime" class="col-sm-2 col-form-label">시간</label>
+                            <div class="col-sm-10">
+                              <input type="time" class="form-control" value="10:00" disabled>
+                            </div>
+                          </div>
+                          
+                          
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">담당자</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" value="이준섭 사원" disabled>
+                            </div>
+                          </div>
+                          
+                          
+                          
+                          <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">비고</label>
+                            <div class="col-sm-10">
+                              <textarea class="form-control" style="height: 100px" disabled></textarea>
+                            </div>
+                          </div>
 
+                          
+
+                          <div id="content">
+                            
+                          </div>
+                  </div>
+                </div>
+            </div>
+            
+            
         
       </div>
     </section>
+    <!--나중을 위해 메인 안쪽에다 스크립트 추가-->
+    <script>
+      var testCount=1;
+      document.getElementById('addHtmlBtn').addEventListener('click', function() {
+        if(testCount<=1){
+          var contentDiv = document.getElementById('content');
+          var newHtml = `
+                <hr>
+                          <h5 class="card-title">검수 결과</h5>                       
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">날짜</label>
+                            <div class="col-sm-10">
+                              <input type="date" class="form-control" value="2024-07-31" >
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <label for="inputTime" class="col-sm-2 col-form-label">시간</label>
+                            <div class="col-sm-10">
+                              <input type="time" class="form-control" value="10:00" >
+                            </div>
+                          </div>
+                          
+                          
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">담당자</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" value="이준섭 사원" >
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">진척률</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" value="80%" >
+                            </div>
+                          </div>
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-2 col-form-label">납기진도</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" value="80%" >
+                            </div>
+                          </div>
+                          
+                          <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">보완사항</label>
+                            <div class="col-sm-10">
+                              <textarea class="form-control" style="height: 100px" >완성은 안 되었으나, 납기일자에 납기 가능해보임</textarea>
+                            </div>
+                          </div>
+                          <button type="button" class="btn btn-primary">등록</button>
+          `;
+          contentDiv.innerHTML = newHtml;
+          testCount+=1;}
+      });
+  </script>
+
+
 
   </main><!-- End #main -->
 
