@@ -292,8 +292,8 @@
             </a>
           </li>
           <li>
-            <a href="plan_product.html".html">
-              <i class="bi bi-circle"></i><span>자재품목</span>
+            <a href="components-accordion.html">
+              <i class="bi bi-circle"></i><span>제품리스트</span>
             </a>
           </li>
           
@@ -447,12 +447,15 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>자재등록</h1>
+      <h1>거래처리스트
+      </h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="main.html">메인</a></li>
-          <li class="breadcrumb-item">경로1</li>
-          <li class="breadcrumb-item active">자재등록</li>
+          <li class="breadcrumb-item">발주계획</li>
+          <li class="breadcrumb-item active">거래처리스트
+
+          </li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -463,64 +466,72 @@
 
           <div class="card">
             <div class="card-body">
-                <h5 class="card-title">
-                  자재등록
-                  
+                <h5 class="card-title">거래처리스트
+        
                 </h5>
-  
-                <!-- General Form Elements -->
-                <form>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">자재코드</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" value="PROD-1234-5678-9012-3456" disabled>
-                        </div>
-                    </div>
+                <a href="#"><button type="button" class="btn btn-primary btn-sm">거래처목록파일업로드</button></a>
+                <a href="#"><button type="button" class="btn btn-primary btn-sm">개별거래처등록</button></a>
+                <!-- Table with hoverable rows -->
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">거래처명</th>
+                        <th scope="col">대표자명</th>
+                        <th scope="col">주소</th>
+                        <th scope="col">대표번호</th>
+                        <th scope="col">대표이메일</th>
+                        <th scope="col">유형</th>
+                        <th scope="col">담당자</th>
+                        <th scope="col">담당연락처</th>
+                        <th scope="col">담당이메일</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>A물산</td>
+                      <td>김준철</td>
+                      <td>경기도 수원시 ...</td>
+                      <td>031-123-4567</td>
+                      <td>Aaaa@aaa.com</td>
+                      <td>공급업체</td>
+                      <td>이성환</td>
+                      <td>010-1236-5478</td>
+                      <td>Aaa222@aaa.com</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>B상사</td>
+                        <td>하용</td>
+                        <td>서울특별시 구로구 ...</td>
+                        <td>031-456-8999</td>
+                        <td>Bbb@aaa.com</td>
+                        <td>공급업체</td>
+                        <td>승영조</td>
+                        <td>010-5566-1668</td>
+                        <td>asdf@aaa.com</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>C종합회사</td>
+                        <td>전대훈</td>
+                        <td>경기도 화성시 ...</td>
+                        <td>031-123-4567</td>
+                        <td>Aaaa@aaa.com</td>
+                        <td>공급업체</td>
+                        <td>김경미</td>
+                        <td>010-1236-5478</td>
+                        <td>Aaa222@aaa.com</td>
+                      </tr>
                     
-    
-                    <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">자재명</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">규격</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="inputText" class="col-sm-2 col-form-label">재질</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control">
-                      </div>
-                   </div>
                     
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">도면</label>
-                    <div class="col-sm-10">
-                      <input class="form-control" type="file" id="formFile">
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">참고문서</label>
-                    <div class="col-sm-10">
-                      <input class="form-control" type="file" id="formFile">
-                    </div>
-                  </div>
-                  
-                  
-  
-                  <div class="row mb-3">
-                    <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">저장</button>
-                    </div>
-                  </div>
-  
-                </form><!-- End General Form Elements -->
+                  </tbody>
+                </table>
+                <!-- End Table with hoverable rows -->
   
               </div>
+          </div>
 
         </div>
 

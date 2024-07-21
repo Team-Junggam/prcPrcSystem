@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>구매 발주서 발행</title>
+</head>
+<body>
+    <h1>구매 발주서 발행</h1>
+    <form action="/issue_purchase_order" method="post">
+        <label for="order_number">발주서 번호:</label>
+        <input type="text" id="order_number" name="order_number" value="PO123456" required><br><br>
+        <label for="supplier">협력 업체:</label>
+        <input type="text" id="supplier" name="supplier" value="ABC 협력사" required><br><br>
+        <label for="item_details">품목 상세:</label>
+        <textarea id="item_details" name="item_details" required>예시 품목 - 100개</textarea><br><br>
+        <label for="delivery_date">납기일:</label>
+        <input type="date" id="delivery_date" name="delivery_date" value="2024-08-10" required><br><br>
+        <button type="submit">발주서 발행</button>
+    </form>
+</body>
+</html>
