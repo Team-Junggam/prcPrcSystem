@@ -45,7 +45,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="main.html" class="logo d-flex align-items-center">
-        <img src="../assets/img/logo.png" alt="">
+        <img src="../ㅁ
+  assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">팀 정감</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -160,7 +161,8 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="../assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <img src="../ㅁ
+          assets/img/messages-1.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>Maria Hudson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -174,7 +176,8 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="../assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <img src="../ㅁ
+          assets/img/messages-2.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>Anna Nelson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -188,7 +191,8 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="../assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <img src="../ㅁ
+          assets/img/messages-3.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>David Muldon</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -211,7 +215,8 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="../ㅁ
+      assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -293,7 +298,7 @@
           </li>
           <li>
             <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>제품리스트</span>
+              <i class="bi bi-circle"></i><span>검수리스</span>
             </a>
           </li>
           
@@ -447,12 +452,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>조달계획리스트</h1>
+      <h1>검수리스트</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="main.html">메인</a></li>
           <li class="breadcrumb-item">발주계획</li>
-          <li class="breadcrumb-item active">조달계획리스트</li>
+          <li class="breadcrumb-item active">검수리스트</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -463,44 +468,53 @@
 
           <div class="card">
             <div class="card-body">
-                <h5 class="card-title">조달계획리스트</h5>
-                <a href="생산계획처리.html"><button type="button" class="btn btn-primary btn-sm">생산계획등록</button></a>
-                <a href="#"><button type="button" class="btn btn-primary btn-sm">별도조달계획등록</button></a>
+                <h5 class="card-title">발주리스트</h5>
+                <a href="plan_product_insert.html"><button type="button" class="btn btn-primary btn-sm">제품등록</button></a>
                 <!-- Table with hoverable rows -->
                 <table class="table table-hover">
-                  <thead>
+                <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">구분</th>
-                      <th scope="col">제품</th>
-                      <th scope="col">규격</th>
-                      <th scope="col">재질</th>
-                      <th scope="col">도면</th>
-                      <th scope="col">등록일</th>
+                    <th scope="col">#</th>
+                    <th scope="col">구분</th>
+                    <th scope="col">자재명</th>
+                    <th scope="col">수량</th>
+                    <th scope="col">거래처명</th>
+                    <th scope="col">발주날짜</th>
+                    <th scope="col">검수일정1</th>
+                    <th scope="col">검수일정2</th>
+                    <th scope="col">납기일</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>수립</td>
-                      <td>펜대</td>
-                      <td>8.8*146.3mm</td>
-                      <td>아노다이징/황동</td>
-                      <td><button type="button" class="btn btn-primary btn-sm">미리보기</button></td>
+                    <th scope="row">1</th>
+                    <td>검수완료</td>
+                    <td><a href="발주완료.html">펜대</a></td>
+                    <td>50</td>
+                    <td>A상사</td>
+                    <td>2024-07-18</td>
+                    <td>2024-07-19</td>
+                    <td>2024-07-21</td>
+                    <td>2024-08-05</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>재검수필요</td>
+                      <td><a href="발주완료.html">펜대</a></td>
+                      <td>50</td>
+                      
+                      <td>A상사</td>
                       <td>2024-07-18</td>
-                    </tr>
-                    
-                    
-                  </tbody>
+                      <td>2024-07-21</td>
+                      <td>-</td>
+                      <td>2024-08-05</td>
+                      </tr>
+                </tbody>
                 </table>
                 <!-- End Table with hoverable rows -->
-  
-              </div>
           </div>
-
+      </div>
         </div>
-
-        
       </div>
     </section>
 

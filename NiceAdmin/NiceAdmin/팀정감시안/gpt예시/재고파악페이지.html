@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>재고 파악</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .table th,
+        .table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .table button {
+            padding: 5px 10px;
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>재고 파악</h1>
+    </div>
+    <div class="container">
+        <div class="form-group">
+            <input type="text" placeholder="검색할 품목을 입력하세요">
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>품목</th>
+                    <th>수량</th>
+                    <th>상태</th>
+                    <th>업데이트</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>품목 A</td>
+                    <td>100</td>
+                    <td>정상</td>
+                    <td><button>업데이트</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -293,7 +293,7 @@
           </li>
           <li>
             <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>제품리스트</span>
+              <i class="bi bi-circle"></i><span>발주서리스트</span>
             </a>
           </li>
           
@@ -447,61 +447,133 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>조달계획리스트</h1>
+      <h1>입출고목록</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="main.html">메인</a></li>
-          <li class="breadcrumb-item">발주계획</li>
-          <li class="breadcrumb-item active">조달계획리스트</li>
+          <li class="breadcrumb-item">재고관리</li>
+          <li class="breadcrumb-item active">입출고목록</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
     <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">입출고목록</h5>
+                        <!-- Accordion without outline borders -->
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      <b>검색조건 | 보기:입고+출고 | 품목: 전체 | 기간 : 전체 </b>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-1 col-form-label">보기</label>
+                            <div class="col-sm-2">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>입고+출고</option>
+                                    <option value="1">입고</option>
+                                    <option value="2">출고</option>
+                                </select>
+                            </div>
+                            
+                            <label for="inputPassword" class="col-sm-1 col-form-label">품목</label>
+                            <div class="col-sm-2">
+                              <input type="text" class="form-control" value="전체">
+                            </div>
 
-          <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">조달계획리스트</h5>
-                <a href="생산계획처리.html"><button type="button" class="btn btn-primary btn-sm">생산계획등록</button></a>
-                <a href="#"><button type="button" class="btn btn-primary btn-sm">별도조달계획등록</button></a>
-                <!-- Table with hoverable rows -->
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">구분</th>
-                      <th scope="col">제품</th>
-                      <th scope="col">규격</th>
-                      <th scope="col">재질</th>
-                      <th scope="col">도면</th>
-                      <th scope="col">등록일</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>수립</td>
-                      <td>펜대</td>
-                      <td>8.8*146.3mm</td>
-                      <td>아노다이징/황동</td>
-                      <td><button type="button" class="btn btn-primary btn-sm">미리보기</button></td>
-                      <td>2024-07-18</td>
-                    </tr>
-                    
-                    
-                  </tbody>
-                </table>
-                <!-- End Table with hoverable rows -->
-  
-              </div>
-          </div>
+                            <label for="inputPassword" class="col-sm-1 col-form-label">기간</label>
+                            <div class="col-sm-2">
+                                <input type="date" class="form-control" value="0">
+                            </div>
+                            ~
+                            <div class="col-sm-2">
+                                <input type="date" class="form-control" value="2024-07-21">
+                            </div>
 
+                            
+
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                
+                </div>
+              
+
+                        <!-- Table with hoverable rows -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">품목명</th>
+                                    <th scope="col">입고량</th>
+                                    <th scope="col">출고량</th>
+                                    <th scope="col">현재고</th>
+                                    <th scope="col">거래처/요청부서</th>
+                                    <th scope="col">날짜</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td><a href="입고내역상세보기.html">버튼</a></td>
+                                    <td>70</td>
+                                    <td>-</td>
+                                    <td>160</td>
+                                    <td>B상사</td>
+                                    <td>2024-07-12</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td><a href="출고내역상세보기.html">펜대</a></td>
+                                    <td>-</td>
+                                    <td>35</td>
+                                    <td>115</td>
+                                    <td>생산1팀</td>
+                                    <td>2024-07-12</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td><a href="출고내역상세보기.html">버튼</a></td>
+                                    <td>-</td>
+                                    <td>20</td>
+                                    <td>90</td>
+                                    <td>생산2팀</td>
+                                    <td>2024-07-11</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td><a href="입고내역상세보기.html">펜대</a></td>
+                                    <td>50</td>
+                                    <td>-</td>
+                                    <td>150</td>
+                                    <td>A물산</td>
+                                    <td>2024-07-11</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td><a href="입고내역상세보기.html">펜대</a></td>
+                                    <td>50</td>
+                                    <td>-</td>
+                                    <td>100</td>
+                                    <td>A물산</td>
+                                    <td>2024-07-10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- End Table with hoverable rows -->
+                            
+                    </div>
+                </div>
+            </div>
         </div>
-
-        
-      </div>
     </section>
 
   </main><!-- End #main -->

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM목록</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding-bottom: 80px;
+        }        
+        body {
+            padding-bottom: 80px;
+        }        
+        .part {
+            padding: 3px;
+        }
+        .part_view {
+            background-color: #fff;
+            color:#777;
+            border-radius: 5px;
+        }
+        .part:hover {
+            background-color: #fff;
+            color:#777;
+            border-radius: 5px;
+        }
+
+        th {
+            background-color: #efefef;
+        }
+
+        .part_menu>a {
+            color: #fff;
+        }
+        .part_sub_menu>a {
+            color: #000;
+        }
+
+    </style>
+
+
+<style>
+    .num-span {
+        display:inline-block; padding: 8px 16px; border:1px solid #777; border-top-left-radius:70%;border-bottom-right-radius:70%; border-top-right-radius:30%;border-bottom-left-radius:30%;
+        background-color: #dadada;
+        cursor: pointer;
+    }
+    .num-span:hover {
+        background-color: #fff;
+        border-top-left-radius:30%;border-bottom-right-radius:30%; border-top-right-radius:70%;border-bottom-left-radius:70%;
+    }
+    .num-view {
+        font-weight: bold;
+        background-color: #fff;
+        border-top-left-radius:30%;border-bottom-right-radius:30%; border-top-right-radius:70%;border-bottom-left-radius:70%;
+    }
+</style>
+
+</head>
+
+<body>
+    <div style="width:100%; background-color: gray; color:#fff; padding: 5px;">
+        <span class="part_menu" style="display: inline-block; width: 99%; vertical-align: middle; text-align: left;">
+            <span style="display: inline-block; height: 100%;"vertical-align: middle;></span>
+            <span style="display: inline-block; border: 1px solid #777; vertical-align: middle; padding: 3px; padding-top: 8px;padding-bottom: 10px; border-radius:100%; border-color: #fff; ">정감</span>
+            <span style="display: inline-block; border: 0px solid #999;vertical-align: middle; font-size:1.2rem; font-weight: bold;">조달 구매 시스템</span>
+
+            <a href="조달계획서목록.html"><span class="part" style="margin-left:100px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>발주</u></span></a>
+            <a href="발주서목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>구매</u></span></a>
+            <a href="입고품목목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>입고</u></span></a>
+            <a href="출고품목목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>출고</u></span></a>
+            <a href="BOM목록.html"><span class="part part_view" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>BOM</u></span></a>
+            <a href="회원목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>회원</u></span></a>
+            <a href="거래처목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>거래처</u></span></a>
+        </span>
+    </div>
+    
+    <div class="part_sub_menu" style="margin-top: 10px; position: relative; min-width: 500px;">
+        <a href="인트로.html"><span class="part_sub" style="position: absolute; right:0; margin-right: 15px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>로그인/로그아웃</u></span></a>
+    </div>
+
+
+    <h2 style="margin-top: 70px; text-align: center; ">BOM 목록</h2>
+
+    <p style="width: 70%; min-width: 500px; text-align: left; margin: 0 auto; padding-bottom: 10px; position: relative;">
+        <span style="display: inline-block;">
+            <select name="product" style="height:25px;">
+                <option value="">---선택---</option>
+                <option value="">품목이름</option>
+                <option value="">품목코드</option>
+            </select>
+            <input type="date" name="sdate" style="height:19px;" />
+            <input type="date" name="edate" style="height:19px;" />
+            <input type="text" size="15" style="height:19px;">
+            <input type="submit" value=" 검색 ">
+        </span>
+        <span style="display: inline-block; position: absolute; right:0;"><u class="modal_btn">완제품 BOM 등록</u></span>
+    </p>
+
+    <div style="width: 70%; margin: 0 auto;">
+        <table border="1" cellpadding="8" width="100%" style="border-collapse: collapse; margin: 0 auto;">
+<!--
+품목
+품번(코드)
+단계:1~9, 증가값:1000 100~9999 999,
+코드 예 :
+    볼펜(완제품) 코드 예:
+    1단계 : 2
+    2단계 : 1000
+    3단계 : 100
+    결합코드 : 21000100
+    볼펜->잉크(단품) 코드 예:
+    1단계 : 2
+    2단계 : 1000
+    3단계 : 101
+    21000 101
+    결합코드 : 21000101
+규격
+재질
+도면
+사양
+수량
+단위
+자재구매처
+필요공정
+자재설명
+-->            
+            <tr>
+                <th>품목명</th>
+                <th>품목코드</th>
+                <th>규격</th>
+                <th>재질</th>
+                <th>사양</th>
+                <th>도면</th>
+                <th>수량</th>
+                <th>단위</th>
+                <th>구매처</th>
+                <th>조립</th>
+                <th>설명</th>
+                <th>변경</th>
+            </tr>
+            <tr>
+                <td><u onclick="modal_open();" style="cursor: pointer;">볼펜</u></td>
+                <td>21000100</td>
+                <td>규격</td>
+                <td>재질</td>
+                <td>사양</td>
+                <td>도면</td>
+                <td>1</td>
+                <td>EA</td>
+                <td>ABC상사</td>
+                <td>조립</td>
+                <td>제품생산</td>
+                <td>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">등록</u></span>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">수정</u></span>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">삭제</u></span>
+                </td>
+            </tr>
+            <tr>
+                <td><u onclick="modal_open();" style="margin-left:20px; cursor: pointer;">잉크</u></td>
+                <td>21000101</td>
+                <td>규격</td>
+                <td>재질</td>
+                <td>사양</td>
+                <td>도면</td>
+                <td>1</td>
+                <td>EA</td>
+                <td>ABC상사</td>
+                <td>조립</td>
+                <td>제품생산</td>
+                <td>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">수정</u></span>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">삭제</u></span>
+                </td>
+            </tr>
+            <tr>
+                <td><u onclick="modal_open();" style="cursor: pointer;margin-left:20px; ">스프링</u></td>
+                <td>21000102</td>
+                <td>규격</td>
+                <td>재질</td>
+                <td>사양</td>
+                <td>도면</td>
+                <td>1</td>
+                <td>EA</td>
+                <td>ABC상사</td>
+                <td>조립</td>
+                <td>제품생산</td>
+                <td>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">수정</u></span>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">삭제</u></span>
+                </td>
+            </tr>
+            <tr>
+                <td><u onclick="modal_open();" style="cursor: pointer;margin-left:20px; ">펜촉</u></td>
+                <td>21000103</td>
+                <td>규격</td>
+                <td>재질</td>
+                <td>사양</td>
+                <td>도면</td>
+                <td>1</td>
+                <td>EA</td>
+                <td>ABC상사</td>
+                <td>조립</td>
+                <td>제품생산</td>
+                <td>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">수정</u></span>
+                    <span><u onclick="modal_open();" style="cursor: pointer;">삭제</u></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center;">
+        <div class="page-div">
+            <span class="" style="margin-right:5px;"><b> &lt;&lt; </b></span>
+            <script>
+                for(var i=1; i<8; i++) {
+                    if(i==1) {
+                        document.write('<span class="num-span num-view">'+i+'</span> ');
+                    } else {
+                        document.write('<span class="num-span">'+i+'</span> ');
+                    }
+                }
+            </script>
+            <span class="" style="margin-left:5px;"><b> &gt;&gt; </b></span>
+
+        </div>
+    </div>
+
+
+    <div style="position: fixed; bottom:0; width:100%; background-color: #999; color:#fff; padding-top: 5px; padding-bottom: 13px;">
+        <span style="display: inline-block; width: 99%; vertical-align: middle; text-align: center; font-size: 0.8rem;">ⓒ 정감 조달 구매 시스템</span>
+    </div>
+
+
+<!--모달 팝업-->
+<div id="modal" class="modal">
+    <div class="modal_popup" style="width:30%; min-width:380px;">
+        <h3 style="text-align: center; background-color: #e0e0e0; border-radius: 5px; padding: 5px; position:relative;">
+            BOM 등록
+            <span onclick="modal_close();" style="position: absolute; top:0px; right:0; display: inline-block; padding-top:3px;padding-bottom:5px;padding-left:10px;padding-right:10px; border: 1px solid #999; border-radius: 4px; background-color: #fff; cursor:pointer;" title="닫기">X</span>
+        </h3>
+<!-- /모달창 내용 항목 구성폼 / -->
+<!--
+품목
+품번(코드)
+단계:1~9, 증가값:1000 100~9999 999,
+코드 예 :
+1 1000 100 ~ 9999 999 : 하위품목이 없는 품목 코드
+2 1000 100 ~ 9999 999 : 하위품목이 있는 품목 코드 : 완제품코드
+3 1000 100 ~ 9999 999 : 하위품목(2단계 하위품목)의 품모 코드 : 단품코드
+    별도품목(하위품목이 없는 품목) 코드 예 :
+    1단계 : 1
+    2단계 : 1000
+    3단계 : 100
+    결합코드 : 11000100
+
+    볼펜(완제품) 코드 예:
+    1단계 : 2
+    2단계 : 1000
+    3단계 : 100
+    결합코드 : 21000100
+
+    볼펜->잉크(단품) 코드 예:
+    1단계 : 2
+    2단계 : 1000
+    3단계 : 101
+    21000 101
+    결합코드 : 21000101
+규격
+재질
+도면
+사양
+수량
+단위
+자재구매처
+필요공정
+자재설명
+-->
+        <div>
+            <table width="100%" border="0" cellpadding="5" style="border-collapse: collapse;">
+                <tbody>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">품목명</td>
+                        <td><input type="text" style="width:96%; height: 25px;" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">품목코드</td>
+                        <td><input type="text" style="width:96%; height: 25px;" placeholder="'21000100' 형식의 숫자 8자리로 자동설정됨"  /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">규격</td>
+                        <td><input type="text" style="width:96%; height: 25px;" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">재질</td>
+                        <td><input type="text" style="width:96%; height: 25px;" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">도면</td>
+                        <td><input type="file" style="width:96%; height: 25px;" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">사양</td>
+                        <td><input type="file" style="width:96%; height: 25px;" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">수량</td>
+                        <td><input type="text" style="width:96%; height: 25px;" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">단위</td>
+                        <td><input type="text" style="width:96%; height: 25px;" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">구매처</td>
+                        <td>
+                            <input type="text" style="width:53%; height: 25px;" />
+                            <button style="padding:3px;">거래처 검색</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">필요공정</td>
+                        <td><input type="text" style="width:96%; height: 25px;" /></td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px; padding-left:8px;">설명</td>
+                        <td><textarea style="width:96%; height: 50px;"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--<p>품목</p>
+        <p>코드</p>
+        <p>규격</p>
+        <p>등등 항목 기술</p>-->
+
+        <span style="margin-top: 20px; display: block; text-align: center;">실제 화면구성시는 아래 등록과 삭제 버튼을 구분함.</span>
+        <p style="text-align: center; background-color: #e0e0e0; border-radius: 5px; padding: 6px; margin-top: 15px; margin-bottom: 6px;">
+            <button style="padding:8px 19px; background-color: royalblue; border:none; border-radius: 6px; color: #fff;">저장</button>
+            <button style="margin-left:8px; padding:8px 19px; background-color: royalblue; border:none; border-radius: 6px; color: #fff;">삭제</button>
+        </p>
+        <button type="button" class="close_btn" title="닫기">닫기</button>
+    </div>
+</div>
+<!--end 모달 팝업-->
+<main hidden>
+    <section>
+        <h2>모달 팝업</h2>
+        <button type="button" class="modal_btn">클릭하면 모달팝업이 보여집니다</button>
+    </section>
+</main>
+
+<style>
+    h2{
+        text-align: center;
+    }
+    .modal_btn {
+        /*display: block;
+        margin: 40px auto;
+        padding: 10px 20px;*/
+        /*background-color: royalblue; */
+        border: none;
+        border-radius: 5px;
+        color: #000; /*#fff*/
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+    }
+    .modal_btn:hover {
+        box-shadow: 3px 4px 11px 0px #00000040;
+    }
+    
+    /*모달 팝업 영역 스타일링*/
+    .modal {
+    /*팝업 배경*/
+        display: none; /*평소에는 보이지 않도록*/
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: rgba(0,0,0,0.5);
+    }
+    .modal .modal_popup {
+    /*팝업*/
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 16px;
+    }
+    .modal .modal_popup .close_btn {
+        display: block;
+        padding: 7px 13px; /*10px 20px*/
+        background-color: #656565; /*royalblue*/
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .modal.on {
+        display: block;
+    }
+</style>
+
+    <script>
+        const modal = document.querySelector('.modal');
+        const modalOpen = document.querySelector('.modal_btn');
+        const modalClose = document.querySelector('.close_btn');
+        
+        //열기 버튼을 눌렀을 때 모달팝업이 열림
+        modalOpen.addEventListener('click',function(){
+              //'on' class 추가
+            modal.classList.add('on');
+        });
+        //닫기 버튼을 눌렀을 때 모달팝업이 닫힘
+        modalClose.addEventListener('click',function(){
+            //'on' class 제거
+            modal.classList.remove('on');
+        });
+
+
+        function modal_open() {
+            const modal = document.querySelector('.modal');
+            modal.classList.add('on');
+        }
+
+        function modal_close() {
+            const modalClose = document.querySelector('.close_btn');
+            modal.classList.remove('on');
+        }
+    </script>
+        
+</body>
+</html>

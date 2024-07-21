@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입고검수목록</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding-bottom: 80px;
+        }        
+        body {
+            padding-bottom: 80px;
+        }        
+        .part {
+            padding: 3px;
+        }
+        .part_view {
+            background-color: #fff;
+            color:#777;
+            border-radius: 5px;
+        }
+        .part:hover {
+            background-color: #fff;
+            color:#777;
+            border-radius: 5px;
+        }
+
+        .part_sub {
+            padding:2px;
+        }
+        .part_sub_view {
+            background-color:#777;
+            color:#fff;
+            border-radius: 5px;
+        }
+        .part_sub:hover {
+            background-color:#777;
+            color:#fff;
+            border-radius: 5px;
+        }
+
+        th {
+            background-color: #efefef;
+        }        
+    </style>
+</head>
+
+<body>
+    <div style="width:100%; background-color: gray; color:#fff; padding: 5px;">
+        <span style="display: inline-block; width: 99%; vertical-align: middle; text-align: left;">
+            <span style="display: inline-block; height: 100%;"vertical-align: middle;></span>
+            <span style="display: inline-block; border: 1px solid #777; vertical-align: middle; padding: 3px; padding-top: 8px;padding-bottom: 10px; border-radius:100%; border-color: #fff; ">정감</span>
+            <span style="display: inline-block; border: 0px solid #999;vertical-align: middle; font-size:1.2rem; font-weight: bold;">조달 구매 시스템</span>
+
+            <span class="part" style="margin-left:100px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>발주</u></span>
+            <span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>구매</u></span>
+            <span class="part part_view" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>입고</u></span>
+            <span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>출고</u></span>
+            <span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>BOM</u></span>
+            <span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>회원</u></span>
+            <span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>거래처</u></span>
+        </span>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <span class="part_sub part_sub_view" style="margin-left:20px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>입고검수</u></span>
+        <span class="part_sub" style="margin-left:20px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>입고</u></span>
+        <span class="part_sub" style="margin-left:20px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>거래명세서</u></span>
+        <span class="part_sub" style="margin-left:20px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>발주진행</u></span>
+    </div>
+
+    <h2 style="margin-top: 70px; text-align: center; ">입고검수 목록</h2>
+
+    <p style="width: 70%; min-width: 500px; text-align: left; margin: 0 auto; padding-bottom: 10px; position: relative;">
+        <span style="display: inline-block;">
+            <select name="product" style="height:25px;">
+                <option value="">---품목---</option>
+            </select>
+            <u>날짜</u>
+            <input type="text" size="12" style="height:19px;">
+            <input type="submit" value="조회">
+        </span>
+        <span style="display: inline-block; position: absolute; right:0;"><u>입고검수 등록</u></span>
+    </p>
+    <div style="width: 70%; min-width: 500px; margin: 0 auto;">
+        <table border="1" cellpadding="8" width="100%" style="border-collapse: collapse; margin: 0 auto;">
+            <tr>
+                <th>품목명</th>
+                <th>품목코드</th>
+                <th>단가</th>
+                <th>수량</th>
+                <th>공급가격</th>
+                <th>조달 납기</th>
+                <th>거래처</th>
+                <th>발주날짜</th>
+                <th>입고검수 날짜</th>
+                <th>입고검수 결과</th>
+                <th>변경</th>
+            </tr>
+            <tr>
+                <td>볼펜</td>
+                <td>BP0001</td>
+                <td>1000</td>
+                <td>100</td>
+                <td>100000</td>
+                <td>2024/07/31</td>
+                <td>ABC상사</td>
+                <td>2024/06/30</td>
+                <td>2024/07/31</td>
+                <td>합격</td>
+                <td>
+                    <span><u>수정</u></span>
+                    <span><u>삭제</u></span>
+                </td>
+            </tr>
+            <tr>
+                <td>볼펜</td>
+                <td>BP0001</td>
+                <td>1000</td>
+                <td>100</td>
+                <td>100000</td>
+                <td>2024/08/31</td>
+                <td>ABC상사</td>
+                <td>2024/07/31</td>
+                <td>2024/08/31</td>
+                <td>합격</td>                
+                <td>
+                    <span><u>수정</u></span>
+                    <span><u>삭제</u></span>
+                </td>
+            </tr>
+            <tr>
+                <td>볼펜</td>
+                <td>BP0001</td>
+                <td>1000</td>
+                <td>100</td>
+                <td>100000</td>
+                <td>2024/09/30</td>
+                <td>ABC상사</td>
+                <td>2024/08/31</td>
+                <td>2024/09/30</td>
+                <td>합격</td>
+                <td>
+                    <span><u>수정</u></span>
+                    <span><u>삭제</u></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 20px; text-align: center;">
+        ~~페이징 처리~~
+    </div>
+
+    <div style="position: fixed; bottom:0; width:100%; background-color: #999; color:#fff; padding-top: 5px; padding-bottom: 13px;">
+        <span style="display: inline-block; width: 99%; vertical-align: middle; text-align: center; font-size: 0.8rem;">ⓒ 정감 조달 구매 시스템</span>
+    </div>
+</body>
+</html>
