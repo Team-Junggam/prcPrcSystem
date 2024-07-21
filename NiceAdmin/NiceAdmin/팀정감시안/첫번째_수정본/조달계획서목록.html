@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조달계획서목록</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding-bottom: 80px;
+        }        
+        body {
+            padding-bottom: 80px;
+        }        
+        .part {
+            padding: 3px;
+        }
+        .part_view {
+            background-color: #fff;
+            color:#777;
+            border-radius: 5px;
+        }
+        .part:hover {
+            background-color: #fff;
+            color:#777;
+            border-radius: 5px;
+        }
+
+        .part_sub {
+            padding:2px;
+        }
+        .part_sub_view {
+            background-color:#777;
+            color:#fff;
+            border-radius: 5px;
+        }
+        .part_sub:hover {
+            background-color:#777;
+            color:#fff;
+            border-radius: 5px;
+        }
+
+        th {
+            background-color: #efefef;
+        }
+
+        .part_menu>a {
+            color: #fff;
+        }
+        .part_sub_menu>a {
+            color: #000;
+        }
+
+    </style>
+</head>
+
+<body>
+<div style="width:100%; background-color: gray; color:#fff; padding: 5px;">
+        <span class="part_menu" style="display: inline-block; width: 99%; vertical-align: middle; text-align: left;">
+            <span style="display: inline-block; height: 100%;"vertical-align: middle;></span>
+            <span style="display: inline-block; border: 1px solid #777; vertical-align: middle; padding: 3px; padding-top: 8px;padding-bottom: 10px; border-radius:100%; border-color: #fff; ">정감</span>
+            <span style="display: inline-block; border: 0px solid #999;vertical-align: middle; font-size:1.2rem; font-weight: bold;">조달 구매 시스템</span>
+
+            <a href="조달계획서목록.html"><span class="part part_view" style="margin-left:100px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>발주</u></span></a>
+            <a href="발주서목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>구매</u></span></a>
+            <a href="입고품목목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>입고</u></span></a>
+            <a href="출고품목목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>출고</u></span></a>
+            <a href="BOM목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>BOM</u></span></a>
+            <a href="회원목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>회원</u></span></a>
+            <a href="거래처목록.html"><span class="part" style="margin-left:12px; display: inline-block;vertical-align: middle; font-size:1rem; font-weight: bold;"><u>거래처</u></span></a>
+        </span>
+</div>
+
+<div class="part_sub_menu" style="margin-top: 10px; position: relative; min-width: 500px;">
+    <a href="조달계획서목록.html"><span class="part_sub part_sub_view" style="margin-left:20px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>조달계획</u></span></a>
+    <a href="견적서목록.html"><span class="part_sub" style="margin-left:20px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>견적서</u></span></a>
+    <a href="계약서목록.html"><span class="part_sub" style="margin-left:20px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>계약서</u></span></a>
+    <a href="거래처목록.html"><span class="part_sub" style="margin-left:20px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>거래처</u></span></a>
+
+    <a href="인트로.html"><span class="part_sub" style="position: absolute; right:0; margin-right: 15px; display:inline-block; vertical-align:middle; font-size:1rem;"><u>로그인/로그아웃</u></span></a>
+</div>
+
+
+
+<h2 style="margin-top: 70px; text-align: center; ">조달계획서 목록</h2>
+
+<<p style="width: 70%; min-width: 500px; text-align: left; margin: 0 auto; padding-bottom: 10px; position: relative;">
+        <span style="display: inline-block;">
+            <select name="product" style="height:25px;">
+                <option value="">---선택---</option>
+                <option value="name">품목명</option>
+                <option value="name">품목코드</option>
+            </select>
+            &nbsp;
+            <select name="product" style="height:25px;">
+
+                <option value="">---상태---</option>
+                <option value="name">계획수립</option>
+                <option value="name">거래계약</option>
+                <option value="name">계획등록</option>
+                <option value="name">조달완료</option>
+
+            </select>
+
+
+
+            <input type="date" name=“dob”> ~ <input type="date" name=“dob”>
+            <input type="text" size="15" style="height:19px;">
+            <input type="submit" value=" 검색 ">
+
+
+
+        </span>
+</p>
+
+
+<!--
+//:필요시 생산계획 루틴 추가 검토(생산부서 파트) : 현재는 생산부서에서 문서로 요청이 왔을 때 조달계획처리 진행을 함.
+조달계획서 구성항목에 [계획]상태 컬럼 추가
+:=> 상태값: 계획수립, 견적입수, 거래협상, 거래계약, 계약등록, 계획등록 [,조달완료 : 입고마감시 상태값]
+
+-->
+<p style="width: 70%; text-align: right; margin: 0 auto; padding-bottom: 10px;"><u>조달계획서 등록</u></p>
+<div style="width: 70%; margin: 0 auto;">
+    <table border="1" cellpadding="8" width="100%" style="border-collapse: collapse; margin: 0 auto;">
+        <tr>
+            <th>품목명</th>
+            <th>자재소요공정</th>
+            <th>소요일정</th>
+            <th>소요량</th>
+            <th>조달납기</th>
+            <th>상태</th>
+            <th>변경</th>
+        </tr>
+        <tr>
+            <td><u>볼펜</u></td>
+            <td>소요공정</td>
+            <td>소요일정</td>
+            <td>1000</td>
+            <td>2024/07/31</td>
+            <td>계획수립</td>
+            <td>
+                <span><u>수정</u></span>
+                <span><u>삭제</u></span>
+            </td>
+        </tr>
+        <tr>
+            <td><u>볼펜</u></td>
+            <td>소요공정</td>
+            <td>소요일정</td>
+            <td>1000</td>
+            <td>2024/08/31</td>
+            <td>거래계약</td>
+            <td>
+                <span><u>수정</u></span>
+                <span><u>삭제</u></span>
+            </td>
+        </tr>
+        <tr>
+            <td><u>볼펜</u></td>
+            <td>소요공정</td>
+            <td>소요일정</td>
+            <td>1000</td>
+            <td>2024/09/30</td>
+            <td>계획등록</td>
+            <td>
+                <span><u>수정</u></span>
+                <span><u>삭제</u></span>
+            </td>
+        </tr>
+        <tr>
+            <td><u>볼펜</u></td>
+            <td>소요공정</td>
+            <td>소요일정</td>
+            <td>1000</td>
+            <td>2024/10/31</td>
+            <td>조달완료</td>
+            <td>
+                <span><u>수정</u></span>
+                <span><u>삭제</u></span>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div style="margin-top: 20px; text-align: center;">
+    ~~페이징 처리~~
+</div>
+
+<div style="position: fixed; bottom:0; width:100%; background-color: #999; color:#fff; padding-top: 5px; padding-bottom: 13px;">
+    <span style="display: inline-block; width: 99%; vertical-align: middle; text-align: center; font-size: 0.8rem;">ⓒ 정감 조달 구매 시스템</span>
+</div>
+</body>
+</html>

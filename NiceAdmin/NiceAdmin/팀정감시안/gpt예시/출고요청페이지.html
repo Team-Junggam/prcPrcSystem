@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>출고 요청</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .table th,
+        .table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .table th {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>출고 요청</h1>
+    </div>
+    <div class="container">
+        <div class="form-group">
+            <label for="item">출고 품목</label>
+            <input type="text" id="item" placeholder="출고할 품목을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label for="quantity">출고 수량</label>
+            <input type="number" id="quantity" placeholder="출고할 수량을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label for="purpose">출고 목적</label>
+            <input type="text" id="purpose" placeholder="출고 목적을 입력하세요">
+        </div>
+        <div class="form-group">
+            <button type="button">출고 요청 생성</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>출고 품목</th>
+                    <th>출고 수량</th>
+                    <th>출고 목적</th>
+                    <th>상태</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>품목 A</td>
+                    <td>100</td>
+                    <td>생산</td>
+                    <td>처리 중</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

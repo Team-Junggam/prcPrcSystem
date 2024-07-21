@@ -293,7 +293,7 @@
           </li>
           <li>
             <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>제품리스트</span>
+              <i class="bi bi-circle"></i><span>발주서리스트</span>
             </a>
           </li>
           
@@ -447,12 +447,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>조달계획리스트</h1>
+      <h1>창고재고리스트</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="main.html">메인</a></li>
-          <li class="breadcrumb-item">발주계획</li>
-          <li class="breadcrumb-item active">조달계획리스트</li>
+          <li class="breadcrumb-item">재고관리</li>
+          <li class="breadcrumb-item active">창고재고리스트</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -463,44 +463,71 @@
 
           <div class="card">
             <div class="card-body">
-                <h5 class="card-title">조달계획리스트</h5>
-                <a href="생산계획처리.html"><button type="button" class="btn btn-primary btn-sm">생산계획등록</button></a>
-                <a href="#"><button type="button" class="btn btn-primary btn-sm">별도조달계획등록</button></a>
+                <h5 class="card-title">창고재고리스트</h5>
+                <div class="row mb-3">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">총재고량</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" value="100" disabled>
+                  </div>
+                  <label for="inputPassword" class="col-sm-2 col-form-label">금액</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" value="10000" disabled>
+                  </div>
+                </div>
+
+
+
                 <!-- Table with hoverable rows -->
                 <table class="table table-hover">
-                  <thead>
+                <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">구분</th>
-                      <th scope="col">제품</th>
-                      <th scope="col">규격</th>
-                      <th scope="col">재질</th>
-                      <th scope="col">도면</th>
-                      <th scope="col">등록일</th>
+                    <th scope="col">#</th>
+                    <th scope="col">자재명</th>
+                    <th scope="col">현재고</th>
+                    <th scope="col">출고요청수량</th>
+                    <th scope="col">가용재고</th>
+                    <th scope="col">입고예정수량</th>
+                    <th scope="col">평균단가(원)</th>
+                    <th scope="col">총액(원)</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
+                    <tr>
+                      <th scope="row">0</th>
+                      <td><a href="#">자재명 클릭하면 출고 처리페이지로</a></td>
+                      <td>현창고재고 수량</td>
+                      <td>현장에서 출고요청 준 수량</td>
+                      <td>현재고-출고요청수량</td>
+                      <td>발주수량-입고된수량,즉미입고수량</td>
+                      <td>개당 평균 단가(중간에자재가 단가오를 수 있음을 인지)</td>
+                      <td>현재고*평균단가(원)</td>
+                    </tr>
                     <tr>
                       <th scope="row">1</th>
-                      <td>수립</td>
-                      <td>펜대</td>
-                      <td>8.8*146.3mm</td>
-                      <td>아노다이징/황동</td>
-                      <td><button type="button" class="btn btn-primary btn-sm">미리보기</button></td>
-                      <td>2024-07-18</td>
+                      <td><a href="#">펜대</a></td>
+                      <td>100</td>
+                      <td>40</td>
+                      <td>60</td>
+                      <td>50</td>
+                      <td>100</td>
+                      <td>10000</td>
                     </tr>
-                    
-                    
-                  </tbody>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td><a href="#">펜촉</a></td>
+                      <td>0</td>
+                      <td>20</td>
+                      <td>-20</td>
+                      <td>30</td>
+                      <td>70</td>
+                      <td>0</td>
+                    </tr>
+                </tbody>
                 </table>
                 <!-- End Table with hoverable rows -->
-  
-              </div>
           </div>
-
+      </div>
         </div>
-
-        
       </div>
     </section>
 
