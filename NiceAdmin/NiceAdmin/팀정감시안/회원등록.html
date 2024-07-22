@@ -278,7 +278,7 @@
             </a>
           </li>
           <li>
-            <a href=자사정보.html">
+            <a href="자사정보.html">
               <i class="bi bi-circle"></i><span>회사</span>
             </a>
           </li>
@@ -310,12 +310,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>발주서리스트</h1>
+      <h1>회원등록</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="main.html">메인</a></li>
-          <li class="breadcrumb-item">발주계획</li>
-          <li class="breadcrumb-item active">발주서</li>
+          <li class="breadcrumb-item"><a href="메인대쉬보드.html">메인</a></li>
+          <li class="breadcrumb-item">자사정보</li>
+          <li class="breadcrumb-item active">회원</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -323,179 +323,139 @@
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                        회원등록
+                        </h5>
+                        <!-- General Form Elements -->
+                        <form>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">사내번호</label>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control" value="" >
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">회원명</label>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control" value="" >
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">생년월일</label>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control" value="" >
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label">소속1</label>
+                            <div class="col-sm-4">
+                                <select class="form-select" aria-label="Default select example">
+                                  <option selected>구매조달부</option>
+                                  <option value="1">자재부</option>
+                                  <option value="2">생산부</option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label">소속2</label>
+                            <div class="col-sm-4">
+                                <select class="form-select" aria-label="Default select example">
+                                  <option selected>구매팀</option>
+                                  <option value="1">자재팀</option>
+                                  <option value="2">생산팀</option>
+                                </select>
+                              </div>
+                        </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">직급</label>
+                                <div class="col-sm-4">
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>사원</option>
+                                      <option value="1">관리자</option>
+                                      <option value="2">대리</option>
+                                    </select>
+                                  </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">아이디</label>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control" value="">
+                                </div>
+                            </div>
 
-          <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">발주리스트</h5>
-                <a href="plan_product_insert.html"><button type="button" class="btn btn-primary btn-sm">제품등록</button></a>
-                <!-- Table with hoverable rows -->
-                <table class="table table-hover">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">발주상태</th>
-                    <th scope="col">자재명</th>
-                    <th scope="col">수량</th>
-                    <th scope="col">총액</th>
-                    <th scope="col">거래처명</th>
-                    <th scope="col">검수계획</th>
-                    <th scope="col">발주일</th>
-                    <th scope="col">납기일</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>미발주</td>
-                    <td><a href="발주처리.html">MG0.5 펜대</a></td>
-                    <td>50</td>
-                    <td>3000</td>
-                    <td>A상사</td>
-                    <td>미등록</td>
-                    <td>---</td>
-                    <td>---</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>발주완료</td>
-                    <td><a href="발주처리.html">MG0.5 스프링</a></td>
-                    <td>50</td>
-                    <td>2000</td>
-                    <td>B상사</td>
-                    <td>등록</td>
-                    <td>2024-07-25</td>
-                    <td>2024-08-25</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>발주마감</td>
-                    <td><a href="발주처리.html">MG0.5 펜촉</a></td>
-                    <td>50</td>
-                    <td>2500</td>
-                    <td>C상사</td>
-                    <td>등록</td>
-                    <td>2024-07-25</td>
-                    <td>2024-08-25</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>미발주</td>
-                    <td><a href="발주처리.html">MG0.7 펜대</a></td>
-                    <td>50</td>
-                    <td>3000</td>
-                    <td>A상사</td>
-                    <td>미등록</td>
-                    <td>---</td>
-                    <td>---</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>발주완료</td>
-                    <td><a href="발주처리.html">MG0.7 스프링</a></td>
-                    <td>50</td>
-                    <td>2000</td>
-                    <td>B상사</td>
-                    <td>등록</td>
-                    <td>2024-07-30</td>
-                    <td>2024-08-30</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">6</th>
-                    <td>발주마감</td>
-                    <td><a href="발주처리.html">MG0.7 펜촉</a></td>
-                    <td>50</td>
-                    <td>2500</td>
-                    <td>C상사</td>
-                    <td>등록</td>
-                    <td>2024-07-30</td>
-                    <td>2024-08-30</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">7</th>
-                    <td>미발주</td>
-                    <td><a href="발주처리.html">PG0.5 펜대</a></td>
-                    <td>50</td>
-                    <td>2500</td>
-                    <td>D상사</td>
-                    <td>미등록</td>
-                    <td>---</td>
-                    <td>---</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">8</th>
-                    <td>발주완료</td>
-                    <td><a href="발주처리.html">PG0.5 스프링</a></td>
-                    <td>50</td>
-                    <td>2000</td>
-                    <td>E상사</td>
-                    <td>등록</td>
-                    <td>2024-08-03</td>
-                    <td>2024-09-03</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">9</th>
-                    <td>미발주</td>
-                    <td><a href="발주처리.html">PS0.5 펜대</a></td>
-                    <td>50</td>
-                    <td>2500</td>
-                    <td>D상사</td>
-                    <td>미등록</td>
-                    <td>---</td>
-                    <td>---</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">10</th>
-                    <td>발주마감</td>
-                    <td><a href="발주처리.html">PS0.5 스프링</a></td>
-                    <td>50</td>
-                    <td>2000</td>
-                    <td>E상사</td>
-                    <td>등록</td>
-                    <td>2024-08-03</td>
-                    <td>2024-09-03</td>
-                  </tr>
-                </tbody>
-                </table>
-                <!-- End Table with hoverable rows -->
-          </div>
-      </div>
-        </div>
-      </div>
-    </section>
-
-  </main><!-- End #main -->
-
-  <!--메인끝-->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="../assets/vendor/echarts/echarts.min.js"></script>
-  <script src="../assets/vendor/quill/quill.js"></script>
-  <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
-
-</body>
-
-</html>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">비밀번호</label>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control" value="1234">
+                                </div>
+                            </div>
+                        
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">핸드폰번호</label>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control" value="">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">이메일</label>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control" value="">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">회원상태</label>
+                                <div class="col-sm-4">
+                                    <select class="form-select" aria-label="Default select example">
+                                      <option selected>재직</option>
+                                      <option value="1">휴직</option>
+                                      <option value="2">퇴사</option>
+                                    </select>
+                                  </div>
+                            </div>
+                            <a href="회원목록.html"><button type="button" class="btn btn-primary btn-sm">등록</button></a>
+                        </form>
+                      </div>
+                  </div>
+                    </div>
+                  </div>
+                </section>
+            
+              </main><!-- End #main -->
+            
+              <!--메인끝-->
+            
+              <!-- ======= Footer ======= -->
+              <footer id="footer" class="footer">
+                <div class="copyright">
+                  &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                  <!-- All the links in the footer should remain intact. -->
+                  <!-- You can delete the links only if you purchased the pro version. -->
+                  <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                  <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+              </footer><!-- End Footer -->
+            
+              <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            
+              <!-- Vendor JS Files -->
+              <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+              <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+              <script src="../assets/vendor/chart.js/chart.umd.js"></script>
+              <script src="../assets/vendor/echarts/echarts.min.js"></script>
+              <script src="../assets/vendor/quill/quill.js"></script>
+              <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+              <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+              <script src="../assets/vendor/php-email-form/validate.js"></script>
+            
+              <!-- Template Main JS File -->
+              <script src="../assets/js/main.js"></script>
+            
+            </body>
+            
+            </html>

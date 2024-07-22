@@ -347,14 +347,14 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">생산날짜</label>
                         <div class="col-sm-10">
-                        <input type="date" class="form-control" value="2024-07-" >
+                        <input type="date" class="form-control" value="2024-08-03" >
                         </div>
                     </div>
 
                     <div class="row mb-3">
                       <label class="col-sm-2 col-form-label">조달마감날짜</label>
                       <div class="col-sm-10">
-                      <input type="date" class="form-control" value="2024-07-" >
+                      <input type="date" class="form-control" value="2024-08-02" >
                       </div>
                   </div>
                 
@@ -368,7 +368,7 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">품목명</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" value="3색유성볼펜">
+                        <input type="text" class="form-control" value="유성3색볼펜" disabled>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -378,47 +378,67 @@
                         </div>
                       </div>
                     
-                <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">자재리스트</label>
-                    <div class="col-sm-10">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">자재명</th>
-                            <th scope="col">1개수량</th>
-                            <th scope="col">필요수량</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>펜대</td>
-                            <td><input type="number" value="1" disabled> 개</td>
-                            <td><input type="number" value="50" disabled> 개</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>펜촉</td>
-                            <td><input type="number" value="1" disabled> 개</td>
-                            <td><input type="number" value="50" disabled> 개</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>버튼</td>
-                            <td><input type="number" value="1" disabled> 개</td>
-                            <td><input type="number" value="50" disabled> 개</td>
-                        </tr>
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">
+                          자재리스트
+                          
                         
-                        
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
+                        </label>
+                        <div class="col-sm-10">
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">자재명</th>
+                                <th scope="col">수량(개)</th>
+                                <th scope="col">필요수량(개)</th>
+                                <th scope="col">투입공정</th>
+                                <th scope="col">조달마감일자</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>펜대</td>
+                                <td><input type="number" value="1" disabled></td>
+                                <td><input type="number" value="50" ></td>
+                                <td><input type="text" value="최종조립" disabled></td>
+                                <td><input type="date" value="2024-08-02"></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>펜촉</td>
+                                <td><input type="number" value="3" disabled></td>
+                                <td><input type="number" value="150" ></td>
+                                <td><input type="text" value="1차조립" disabled></td>
+                                <td><input type="date" value="2024-07-31"></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>버튼</td>
+                                <td><input type="number" value="3" disabled></td>
+                                <td><input type="number" value="150" ></td>
+                                <td><input type="text" value="2차조립" disabled></td>
+                                <td><input type="date" value="2024-08-01"></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">4</th>
+                                <td>그립</td>
+                                <td><input type="number" value="1" disabled></td>
+                                <td><input type="number" value="50" ></td>
+                                <td><input type="text" value="최종조립" disabled></td>
+                                <td><input type="date" value="2024-08-02"></td>
+                              </tr>
+                              
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                 <div class="row mb-3">
                     <div class="col-sm-10">
-                    <button type="button" class="btn btn-primary">저장</button>
-                    <button type="button" class="btn btn-primary">리스트</button>
+                    <a href="조달계획리스트.html"><button type="button" class="btn btn-primary">저장</button></a>
+                      <a href="조달계획리스트.html"><button type="button" class="btn btn-primary">리스트</button></a>
                     </div>
                 </div>
                 </form><!-- End General Form Elements -->
