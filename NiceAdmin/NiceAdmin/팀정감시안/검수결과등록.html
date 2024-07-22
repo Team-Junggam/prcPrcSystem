@@ -513,7 +513,9 @@
                           
 
                           <div id="content">
-                            
+                            <button type="button" class="btn btn-primary">계획수정</button>
+                            <button type="button" class="btn btn-primary" id="addHtmlBtn">검수결과등록</button>
+                            <button type="button" class="btn btn-primary">리스트</button>
                           </div>
                   </div>
                 </div>
@@ -561,7 +563,7 @@
                           <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">납기진도</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" value="80%" >
+                              <input type="text" class="form-control" value="미완" >
                             </div>
                           </div>
                           
@@ -571,7 +573,7 @@
                               <textarea class="form-control" style="height: 100px" >완성은 안 되었으나, 납기일자에 납기 가능해보임</textarea>
                             </div>
                           </div>
-                          <button type="button" class="btn btn-primary">등록</button>
+                          <button type="button" class="btn btn-primary">검수결과등록</button>
           `;
           contentDiv.innerHTML = newHtml;
           testCount+=1;}
