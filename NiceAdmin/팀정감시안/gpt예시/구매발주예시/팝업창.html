@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Search and Auto-fill Example</title>
+    <style>
+        /* 팝업 창 스타일 */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        /* 팝업 오버레이 */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            color: #aaa;
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        #searchResults {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+
+        #searchResults div {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        #searchResults div:hover {
+            background-color: #f0f0f0;
+        }
+
+        .selected {
+            background-color: #d0e0f0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="itemCodeInput">Item Code:</label>
+        <input type="text" id="itemCodeInput">
+        <button id="openPopupBtn">Search</button>
+    </div>
+    <div>
+        <label for="itemNameInput">Item Name:</label>
+        <input type="text" id="itemNameInput" disabled>
+    </div>
+
+    <!-- 팝업 오버레이 -->
+    <div id="popupOverlay" class="popup-overlay"></div>
+
+    <!-- 팝업 창 -->
+    <div id="searchPopup" class="popup">
+        <span class="close-btn" id="closePopupBtn">&times;</span>
+        <h2>Search</h2>
+        <input type="text" id="searchInput" placeholder="Type to search...">
+        <div id="searchResults"></div>
+        <button id="confirmSelectionBtn">Confirm</button>
+    </div>
+
+    <script>
+        const items = [
+            { code: 'f1', name: 'Apple' },
+            { code: 'f2', name: 'Banana' },
+            { code: 'f3', name: 'Cherry' }
+            // 필요한 만큼 항목을 추가하세요
+        ];
+
+        document.getElementById('openPopupBtn').addEventListener('click', function() {
+            document.getElementById('popupOverlay').style.display = 'block';
+            document.getElementById('searchPopup').style.display = 'block';
+        });
+
+        document.getElementById('closePopupBtn').addEventListener('click', function() {
+            document.getElementById('popupOverlay').style.display = 'none';
+            document.getElementById('searchPopup').style.display = 'none';
+        });
+
+        document.getElementById('popupOverlay').addEventListener('click', function() {
+            document.getElementById('popupOverlay').style.display = 'none';
+            document.getElementById('searchPopup').style.display = 'none';
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = '';
+
+            const filteredResults = items.filter(item => 
+                item.code.toLowerCase().includes(query) || 
+                item.name.toLowerCase().includes(query)
+            );
+
+            filteredResults.forEach(item => {
+                const div = document.createElement('div');
+                div.textContent = `${item.code} | ${item.name}`;
+                div.dataset.code = item.code;
+                div.dataset.name = item.name;
+                if (selectedItem && selectedItem.code === item.code) {
+                    div.classList.add('selected');
+                }
+                resultsDiv.appendChild(div);
+            });
+        });
+
+        let selectedItem = null;
+
+        document.getElementById('searchResults').addEventListener('click', function(event) {
+            if (event.target.dataset.code) {
+                const resultsDiv = document.getElementById('searchResults');
+                Array.from(resultsDiv.children).forEach(child => child.classList.remove('selected'));
+
+                event.target.classList.add('selected');
+                selectedItem = {
+                    code: event.target.dataset.code,
+                    name: event.target.dataset.name
+                };
+            }
+        });
+
+        document.getElementById('confirmSelectionBtn').addEventListener('click', function() {
+            if (selectedItem) {
+                document.getElementById('itemCodeInput').value = selectedItem.code;
+                document.getElementById('itemNameInput').value = selectedItem.name;
+                document.getElementById('popupOverlay').style.display = 'none';
+                document.getElementById('searchPopup').style.display = 'none';
+            }
+        });
+
+        document.getElementById('itemCodeInput').addEventListener('input', function() {
+            const inputCode = this.value.toLowerCase();
+            const item = items.find(item => item.code.toLowerCase() === inputCode);
+            if (item) {
+                document.getElementById('itemNameInput').value = item.name;
+            } else {
+                document.getElementById('itemNameInput').value = '';
+            }
+        });
+    </script>
+</body>
+</html>

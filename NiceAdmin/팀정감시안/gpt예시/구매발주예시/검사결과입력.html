@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>검사 결과 입력</title>
+</head>
+<body>
+    <h1>검사 결과 입력</h1>
+    <form action="/save_inspection_result" method="post">
+        <label for="inspection_item">검사 항목:</label>
+        <input type="text" id="inspection_item" name="inspection_item" value="예시 품목" required><br><br>
+        
+        <label for="result">결과:</label>
+        <select id="result" name="result" required>
+            <option value="합격">합격</option>
+            <option value="불합격">불합격</option>
+        </select><br><br>
+        
+        <label for="inspection_date">검사 일자:</label>
+        <input type="date" id="inspection_date" name="inspection_date" value="2024-07-20" required><br><br>
+        
+        <label for="inspector">검사자:</label>
+        <input type="text" id="inspector" name="inspector" value="홍길동" required><br><br>
+        
+        <button type="submit">검사 결과 저장</button>
+    </form>
+</body>
+</html>

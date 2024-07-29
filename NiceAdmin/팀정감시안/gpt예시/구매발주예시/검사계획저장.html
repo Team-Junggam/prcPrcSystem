@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>검사 계획 작성</title>
+</head>
+<body>
+    <h1>검사 계획 작성</h1>
+    <form action="/save_inspection_plan" method="post">
+        <label for="inspection_item">검사 항목:</label>
+        <input type="text" id="inspection_item" name="inspection_item" value="예시 품목" required><br><br>
+        
+        <label for="inspection_criteria">검사 기준:</label>
+        <textarea id="inspection_criteria" name="inspection_criteria" required>품질 기준 1, 품질 기준 2</textarea><br><br>
+        
+        <label for="inspection_schedule">검사 일정:</label>
+        <input type="date" id="inspection_schedule" name="inspection_schedule" value="2024-07-15" required><br><br>
+        
+        <label for="inspection_team">담당 검사팀:</label>
+        <input type="text" id="inspection_team" name="inspection_team" value="검사팀 A" required><br><br>
+        
+        <button type="submit">검사 계획 저장</button>
+    </form>
+</body>
+</html>
